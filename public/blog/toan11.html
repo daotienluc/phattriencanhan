@@ -121,17 +121,12 @@
           </div>
           <div class="content">
             <h2 class="fw-bold">Đề thi Toán 11 Giữa kì 1 năm 2024</h2>
-            <h5 class="fw-bold">Phần 1: Trắc nghiệm</h5>
-            <div class="question-container">
-                <div class="question-title">Bài 1</div>
-                <div class="my-3">Có bao nhiêu số tự nhiên có 4 chữ số khác nhau đôi một?</div>
-                <div class="options">
-                    <div class="option">A. 5040</div>
-                    <div class="option">B. 9000</div>
-                    <div class="option">C. 1000</div>
-                    <div class="option">D. 4436</div>
-                </div>
+            <h5 class="fw-bold my-5">Phần 1: Trắc nghiệm</h5>
+            <div class="question-container border-0">
+              <div  id="questions"></div>
             </div>
+            <h5 class="fw-bold my-5">Phần 2: Tự luận</h5>
+            <div class="mb-5" id="essay-questions"></div>
           </div>
       </div>
     </div>
@@ -209,5 +204,16 @@
         });
       });
     </script>
+
+    <!-- MathJax để hiển thị các công thức toán học. -->
+    <!-- Sử dụng async: -->
+<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" async></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+
+<!-- Hoặc sử dụng defer: -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+<script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script src="./../js/toan.js"></script>
   </body>
 </html>
