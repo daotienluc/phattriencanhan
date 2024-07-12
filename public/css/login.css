@@ -1,0 +1,83 @@
+.main {
+  background-color: #f0f2f5;
+  height: 100vh;
+}
+
+#form-login {
+  width: 85%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+#form-login input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 80%;
+  padding: 10px 10px;
+  margin: 10px 0;
+}
+
+#form-login p {
+  margin-bottom: 0px;
+  display: block;
+}
+
+#form-login button {
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  width: 80%;
+  padding: 10px 0;
+  margin: 20px 0;
+  background-color: #75b9f7;
+  border: none;
+}
+
+/* footer */
+
+.footer {
+  background-color: #68829d;
+}
+
+.contact li {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.contact li i {
+  color: var(--prymary-color);
+  margin-right: 10px;
+}
+
+.contact li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* reposive */
+
+/* mobile */
+
+@media only screen and (max-width: 767px) {
+  #form-login {
+    margin: 30px auto;
+  }
+}
+
+/* tablet */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #form-login {
+    margin: 30px auto;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #form-login {
+    margin: 30px auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+}
