@@ -29,6 +29,12 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- fancybox -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+
     <!-- FontAwesome 6.2.0 CSS -->
     <link
       rel="stylesheet"
@@ -38,7 +44,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./../css/toan.css" />
   </head>
   <body>
     <header>
@@ -129,46 +135,34 @@
     </header>
     <div id="main">
       <div class="container">
-        <div class="main_content">
-          <div class="carousel">
-            <div class="banner_carousel">
-              <div class="banner_img">
-                <img src="./img/banner1.jpg" alt="" />
+        <div class="main_content ">
+          <div class="content">
+              <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
+                <div class="content_left w-50 p-2">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                </div>
+                <div class="content_right p-2">
+                    <a class="fs-2 text-black fw-bold text-decoration-none" >Đề thi tuyển sinh lớp 10 Sở GD&ĐT Hà Nội năm 2020 - 2021</a>
+                    <p>Tài liệu được cập nhật liên tục trong gói này từ nay đến hết tháng 3/2024. Chúng tôi đảm bảo đủ số lượng đề đã cam kết hoặc có thể nhiều hơn, tất cả có BẢN WORD,  LỜI GIẢI CHI TIẾT và tải về dễ dàng.</p>
+                    <p>Lớp: 10</p>
+                    <p>Môn: Toán</p>
+                    <button class="btn btn-success fancybox-button" data-fancybox data-src="./../file_pdf/toan10_01.pdf" >Xem tài liệu</button>
+                </div>
               </div>
-              <div class="banner_img">
-                <img src="./img/banner2.jpg" alt="" />
+              <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
+                <div class="content_left w-50 p-2">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                </div>
+                <div class="content_right p-2">
+                    <a class="fs-2 text-black fw-bold text-decoration-none" >Đề thi tuyển sinh lớp 10 Sở GD&ĐT Cao Bằng năm 2024 - 2025</a>
+                    <p>Tài liệu được cập nhật liên tục trong gói này từ nay đến hết tháng 3/2024. Chúng tôi đảm bảo đủ số lượng đề đã cam kết hoặc có thể nhiều hơn, tất cả có BẢN WORD,  LỜI GIẢI CHI TIẾT và tải về dễ dàng.</p>
+                    <p>Lớp: 10</p>
+                    <p>Môn: Toán</p>
+                    <button class="btn btn-success fancybox-button" data-fancybox data-src="./../file_pdf/toan10_02.pdf" >Xem tài liệu</button>
+                </div>
               </div>
-              <div class="banner_img">
-                <img src="./img/banner3.jpg" alt="" />
-              </div>
-            </div>
+
           </div>
-          <div class="content_text">
-            <h2 class="">
-              Lí do
-              <span style="color: #75b9f7">B&D</span>
-              được nhiều học sinh cả nước tin tưởng:
-            </h2>
-            <ul>
-              <li>
-                <i class="fa-solid fa-book"></i>
-                Đầy đủ lời giải SGK - SBT - VBT từ lớp 10 - lớp 12
-              </li>
-              <li>
-                <i class="fa-solid fa-book-open"></i>
-                Kho bài tập trắc nghiệm bám sát theo dạng bài
-              </li>
-              <li>
-                <i class="fa-brands fa-ubuntu"></i>
-                Hệ thống đề thi phong phú, chất lượng
-              </li>
-              <li>
-                <i class="fa-solid fa-chart-simple"></i>
-                Lý thuyết dạng sơ đồ tư duy dễ hiểu
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
     <div class="footer">
@@ -246,6 +240,56 @@
       });
     </script>
 
-    <script src="./js/index.js"></script>
+    <!-- fancybox -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+    <script>
+      Fancybox.bind("[data-fancybox]", {});
+    </script>
+
+    <script>
+      // toan10, lí 10, hóa 10
+      document.getElementById("toan10").onclick = function () {
+        window.location.href = "./toan10.html";
+      };
+
+       document.getElementById("vatli10").onclick = function () {
+        window.location.href = "./li10.html";
+      };
+
+      document.getElementById("hoahoc10").onclick = function () {
+        window.location.href = "./hoa10.html";
+      };
+
+      // toán 11, lí 11, hóa 11
+      document.getElementById("toan11").onclick = function () {
+        window.location.href = "./toan11.html";
+      };
+      
+      document.getElementById("vatli11").onclick = function () {
+        window.location.href = "./li11.html";
+      };
+
+      document.getElementById("hoahoc11").onclick = function () {
+        window.location.href = "./hoa11.html";
+      };
+
+      // toán 12, lí 12, hóa 12
+      document.getElementById("toan12").onclick = function () {
+        window.location.href = "./toan12.html";
+      };
+
+      document.getElementById("vatli12").onclick = function () {
+        window.location.href = "./li12.html";
+      };
+
+      document.getElementById("hoahoc12").onclick = function () {
+        window.location.href = "./hoa12.html";
+      };
+      
+      document.getElementById("logo").onclick = function () {
+        window.location.href = "./../index.html";
+      };
+    </script>
   </body>
 </html>
