@@ -6,6 +6,15 @@ document.getElementById("btnSignUp").onclick = function () {
   window.location.href = "./register.html";
 };
 
+
+// Login on to --> logged
+function register() {
+  window.location.href = './register.html';
+}
+
+
+
+
 // toan10, lí 10, hóa 10
 document.getElementById("toan10").onclick = function () {
   window.location.href = "./blog_link/toan10.html";
