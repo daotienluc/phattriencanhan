@@ -114,6 +114,31 @@
   color: #fff;
 }
 
+
+
+
+
+
+/* button-post-like-comment */
+
+.btn-comment{
+  background-color: var(--prymary-color);
+  color: #fff;
+  border: 1px solid #686868;
+  margin-left: 5px;
+  width: 105px;
+  transition: all 0.5s;
+
+}
+
+.btn-comment:hover{
+  color: #000;
+  background-color: white;
+}
+
+/* button-post-like-comment */
+
+
 /* reposive */
 
 /* mobile */
@@ -147,6 +172,7 @@
     flex-wrap: wrap;
   }
 }
+
 
 /* tablet */
 

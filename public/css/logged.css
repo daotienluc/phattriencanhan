@@ -270,6 +270,56 @@
   color: #fff;
 }
 
+
+
+
+/* button-post-like-comment */
+
+.btn-comment,
+.btn-like,
+.submit-comment-btn{
+  background-color: white;
+  color: #000000;
+  border: 0px;
+  margin-left: auto;
+  width: 120px;
+
+}
+
+.btn-comment:hover,
+.btn-like:hover{
+  background-color: rgb(241, 241, 241);
+  color: #000000;
+  border-radius: 5px;
+
+}
+
+
+.submit-comment-btn:hover{
+  background-color: rgb(188, 248, 233);
+  color: #000000;
+  border-radius: 5px;
+
+}
+
+.user-comment-btn{
+  width: 100%;
+  background-color: rgb(241, 241, 241);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+
+
+
+/* button-post-like-comment */
+
+
+
+
+
 /* reposive */
 
 /* mobile */

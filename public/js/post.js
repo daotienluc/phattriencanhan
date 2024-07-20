@@ -66,28 +66,34 @@ async function fetchPosts() {
                     <div class="blog_icon">
                         <ul class="d-flex justify-content-around">
                             <li class="like-btn">
-                                <i class="fa-solid fa-thumbs-up"></i>
-                                <button>Thích</button>
-                                <span class="like-count">${post.likeCount || 0}</span>
+                                <button class= "btn-like" >
+                                    <i class="fa-solid fa-thumbs-up"></i>
+                                    Thích
+                                    <span class="like-count">${post.likeCount || 0}</span>
+                                </button>
                             </li>
-                            <li class="comment-btn">
-                                <i class="fa-solid fa-comment"></i>
-                                <button>Bình luận</button>
-                                <span class="comment-count">${post.commentCount || 0}</span>
-                            </li>
+
                             <li>
-                                <i class="fa-solid fa-share"></i>
-                                Chia sẻ
+                            </li>
+
+                            <li class="comment-btn" >
+                                <button class= "btn-comment">
+                                    <i class="fa-solid fa-comment"></i>
+                                    Bình luận
+                                    <span class="comment-count">${post.commentCount || 0}</span>
+                                </button>
                             </li>
                         </ul>
                     </div>
+
                     <div class="blog_comment d-flex" style="display: none;">
                         <div class="comment_user">
                             <img src="./img/user.jpg" alt="" />
                         </div>
-                        <input type="text" placeholder="Bình luận với vai trò user" />
+                        <input class="user-comment-btn" type="text" placeholder="Bình luận với vai trò user" />
                         <button class="submit-comment-btn">Gửi</button>
                     </div>
+
                     <div class="comments-container" style="display: none;">
                         <!-- Các bình luận sẽ được thêm vào đây -->
                     </div>
