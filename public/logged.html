@@ -136,7 +136,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="#" id="logout">
+                      <a href="index.html" id="logout" >
                         <i class="fa-solid fa-right-from-bracket"></i>
                         Đăng xuất
                       </a>
@@ -196,25 +196,27 @@
             </ul>
           </div>
         </div>
+        <!-- ----------------------------------------------------------------- -->
+        <div class="text-center my-5">
+          <h2 class="fw-bold">Tạo bài viết</h2>
+          <form id="postForm">
+            <label for="postTitle">Tiêu đề:</label>
+            <input type="text" id="postTitle" name="postTitle" required>
+            <br>
+            <label for="postContent">Câu hỏi: </label>
+            <textarea id="postContent" name="postContent" required></textarea>
+            <br>
+            <button type="submit">Đăng bài</button>
+        </form>
+        </div>
+    
+    
+        <!-- ----------------------------------------------------------------- -->
+        <div id="posts"></div>
+
       </div>
     </div>
 
-    <!-- ----------------------------------------------------------------- -->
-    <div>
-      <form id="postForm">
-        <label for="postTitle">Tiêu đề:</label>
-        <input type="text" id="postTitle" name="postTitle" required>
-        <br>
-        <label for="postContent">Nội dung:</label>
-        <textarea id="postContent" name="postContent" required></textarea>
-        <br>
-        <button type="submit">Đăng bài</button>
-    </form>
-    </div>
-
-
-    <!-- ----------------------------------------------------------------- -->
-    <div id="posts"></div>
 
     <!-- ----------------------------------------------------------------- -->
     <div class="footer">

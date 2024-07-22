@@ -125,7 +125,7 @@
             <div class="user">
               <div class="wrap_user">
                 <i class="fa-regular fa-circle-user"></i>
-                <span id="user-name">Đang tải...</span>
+                <span id="usernameDisplay"></span>
                 <i class="fa-solid fa-caret-down"></i>
                 <div class="user_sub-nav">
                   <ul>
@@ -142,7 +142,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="#" id="logout">
+                      <a href="../index.html" id="logout" >
                         <i class="fa-solid fa-right-from-bracket"></i>
                         Đăng xuất
                       </a>
@@ -315,5 +315,28 @@
         window.location.href = "./../logged.html";
       };
     </script>
+
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        const username = localStorage.getItem('username');
+      if (username) {
+        document.getElementById('usernameDisplay').textContent = `Chào, ${username}`;
+    } else {
+        window.location.href = '/public/login.html'; // Chuyển hướng về trang đăng nhập nếu không có username
+    }
+
+    document.getElementById('logout').addEventListener('click', function() {
+        localStorage.removeItem('username'); // Xóa username khi đăng xuất
+
+      });
+
+    });
+    </script>
+
+
+    <script src="./js/clearcookie.js"></script>
+    <script src="./js/logout.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>
