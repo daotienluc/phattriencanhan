@@ -6,17 +6,6 @@ document
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    function showMessage(message, isError = false) {
-      const messageDiv = document.getElementById("message");
-      messageDiv.textContent = message;
-      messageDiv.classList.remove("hidden");
-      messageDiv.style.backgroundColor = isError ? "#f44336" : "#4CAF50";
-
-      setTimeout(() => {
-        messageDiv.classList.add("hidden");
-      }, 1000);
-    }
-
     try {
       const response = await fetch("http://localhost:3004/api/login", {
         method: "POST",
@@ -28,18 +17,33 @@ document
       });
 
       if (response.ok) {
-        showMessage("Đăng Nhập Thành Công");
+        Swal.fire({
+          icon: "success",
+          title: "Đăng Nhập Thành Công",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         localStorage.setItem("username", username); // Lưu username
         setTimeout(() => {
           window.location.href = "./logged.html"; // Đổi đường dẫn
         }, 1000);
+      } else if (response.status === 401) {
+        Swal.fire({
+          icon: "error",
+          title: "Lỗi",
+          text: "Tài khoản hoặc mật khẩu không đúng. Vui lòng thử lại.",
+        });
       } else {
         const data = await response.json();
-        showMessage("Có Lỗi, Vui Lòng Thử Lại", true);
+        Swal.fire({
+          icon: "error",
+          title: "Có Lỗi",
+          text: "Vui Lòng Thử Lại",
+        });
         console.error("Có Lỗi, Vui Lòng Thử Lại", data.message);
       }
     } catch (error) {
-      showMessage("Error: " + error.message, true);
+      // toastr.error("Error: " + error.message);
       console.error("Error:", error);
     }
   });

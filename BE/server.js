@@ -131,7 +131,7 @@ app.post("/api/login", (req, res) => {
 // Logout a user
 app.post("/api/logout", (req, res) => {
   res.clearCookie("authToken");
-  res.status(200).json({ message: "Logout successful" });
+  res.status(200).send("Logout successful");
 });
 
 // Add a new post
@@ -222,8 +222,12 @@ app.post("/api/posts/:id/like", (req, res) => {
   });
 });
 
-// Get all posts
+// Get all posts with pagination
 app.get("/api/posts", (req, res) => {
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 5;
+  const offset = (page - 1) * limit;
+
   const sql = `
         SELECT p.id, p.postTitle, p.postContent, p.username, p.likeCount,
                IFNULL(c.commentCount, 0) AS commentCount
@@ -233,9 +237,11 @@ app.get("/api/posts", (req, res) => {
             FROM comments
             GROUP BY postId
         ) c ON p.id = c.postId
+        ORDER BY p.timestamp DESC
+        LIMIT ? OFFSET ?
     `;
 
-  db.query(sql, (err, result) => {
+  db.query(sql, [limit, offset], (err, result) => {
     if (err) {
       console.error("Error querying posts:", err);
       return res.status(500).send("Internal server error");

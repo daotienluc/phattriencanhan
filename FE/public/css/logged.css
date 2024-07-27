@@ -25,7 +25,6 @@
 
 .wrap_user {
   position: relative;
-  padding-bottom: 10px;
 }
 
 .wrap_user:hover {
@@ -238,7 +237,7 @@
 }
 
 .comment_user {
-  margin-right: 10px;
+  margin: 6px 10px 0 0;
 }
 
 .blog_comment input {

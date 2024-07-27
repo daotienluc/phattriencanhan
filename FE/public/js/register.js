@@ -7,17 +7,6 @@ document
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    function showMessage(message, isError = false) {
-      const messageDiv = document.getElementById("message");
-      messageDiv.textContent = message;
-      messageDiv.classList.remove("hidden");
-      messageDiv.style.backgroundColor = isError ? "#f44336" : "#4CAF50";
-
-      setTimeout(() => {
-        messageDiv.classList.add("hidden");
-      }, 1000);
-    }
-
     try {
       const response = await fetch("http://localhost:3004/api/register", {
         method: "POST",
@@ -29,10 +18,21 @@ document
       });
 
       if (response.ok) {
-        showMessage("Đăng ký Thành Công");
+        Swal.fire({
+          icon: "success",
+          title: "Đăng Ký Thành Công",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         setTimeout(() => {
           window.location.href = "./login.html";
         }, 1000);
+      } else if (response.status === 400) {
+        Swal.fire({
+          icon: "error",
+          title: "Lỗi",
+          text: "Username đã tồn tại",
+        });
       } else {
         const data = await response.json();
         showMessage("Có Lỗi , Vui Lòng Thử Lại", true);

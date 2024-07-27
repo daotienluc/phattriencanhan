@@ -38,6 +38,11 @@
       referrerpolicy="no-referrer"
     />
 
+
+
+    <!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
     <link rel="stylesheet" href="./css/logged.css" />
   </head>
   <body>
@@ -183,12 +188,11 @@
         <!-- ----------------------------------------------------------------- -->
         <div class="wrap_from text-center my-5 py-5">
           <h2 class="fw-bold pt-3">Đặt câu hỏi</h2>
-          <div class="blog_user" style="max-width: 34%; justify-content: center;">
-            <div class="avata_user">
+          <div class="blog_user" style="display: block; max-width: 80%; margin: 0 auto;">
+            <div class="avata_user" style="float: left;">
                 <img src="./img/user.jpg" alt="" />
                 <span id="usernameBlog"></span>
             </div>
-            
         </div>
           <form id="postForm">
             <div class="from_title">
@@ -206,6 +210,20 @@
         <!-- ----------------------------------------------------------------- -->
         <div id="posts"></div>
 
+        <!-- ----------------------------------------------------------------- -->
+ <!-- Phân trang -->
+ <nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+      <li class="page-item">
+          <button id="prev" class="page-link">Trước</button>
+      </li>
+      <li class="page-item">
+          <button id="next" class="page-link">Sau</button>
+      </li>
+  </ul>
+</nav>
+
+        <!-- ----------------------------------------------------------------- -->
       </div>
     </div>
 
@@ -320,6 +338,9 @@
   document.getElementById('usernameBlog').textContent = `${username}`;
 </script>
 
+
+<!-- SweetAlert2 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
 <!-- ----------------------------------------------------------------- -->
     <script src="./js/logged.js"></script>
