@@ -113,7 +113,7 @@
                 <div class="user_sub-nav">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a href="information.html">
                         <i class="fa-regular fa-address-card"></i>
                         Tài Khoản của tôi
                       </a>
@@ -143,54 +143,26 @@
 
     <!-- ----------------------------------------------------------------- -->
     <div id="main">
-      <div class="container">
-        <div class="main_content">
-          <div class="carousel">
-            <div class="banner_carousel">
-              <div class="banner_img">
-                <img src="./img/banner1.jpg" alt="" />
-              </div>
-              <div class="banner_img">
-                <img src="./img/banner2.jpg" alt="" />
-              </div>
-              <div class="banner_img">
-                <img src="./img/banner3.jpg" alt="" />
-              </div>
-            </div>
-          </div>
-          <!-- ----------------------------------------------------------------- -->
-          <div class="content_text">
-            <h2 class="">
-              Lí do
-              <span style="color: #75b9f7">B&D</span>
-              được nhiều học sinh cả nước tin tưởng:
-            </h2>
-            <ul>
-              <li>
-                <i class="fa-solid fa-book"></i>
-                Đầy đủ lời giải SGK - SBT - VBT từ lớp 10 - lớp 12
-              </li>
-              <li>
-                <i class="fa-solid fa-book-open"></i>
-                Kho bài tập trắc nghiệm bám sát theo dạng bài
-              </li>
-              <li>
-                <i class="fa-brands fa-ubuntu"></i>
-                Hệ thống đề thi phong phú, chất lượng
-              </li>
-              <li>
-                <i class="fa-solid fa-chart-simple"></i>
-                Lý thuyết dạng sơ đồ tư duy dễ hiểu
-              </li>
-            </ul>
-          </div>
+      <div class="banner_carousel">
+        <div>
+          <img src="./img/banner1.jpg" class="w-100" alt="">
         </div>
-        <!-- ----------------------------------------------------------------- -->
+        <div>
+          <img src="./img/banner2.jpg" class="w-100" alt="">
+        </div>
+        <div>
+          <img src="./img/banner3.jpg" class="w-100" alt="">
+        </div>
+        <div>
+          <img src="./img/banner4.jpg" class="w-100" alt="">
+        </div>
+      </div>
+      <div class="container">
         <div class="wrap_from text-center my-5 py-5">
           <h2 class="fw-bold pt-3">Đặt câu hỏi</h2>
           <div class="blog_user" style="display: block; max-width: 80%; margin: 0 auto;">
             <div class="avata_user" style="float: left;">
-                <img src="./img/user.jpg" alt="" />
+                <img style="width: 50px; height: 50px; object-fit: cover;" id="preview-img" src="./img/user.jpg" alt="profileImage" />
                 <span id="usernameBlog"></span>
             </div>
         </div>
@@ -310,6 +282,7 @@
           autoplay: true,
           autoplaySpeed: 3000,
           arrows: false,
+          dots:true
         });
       });
     </script>
@@ -322,7 +295,7 @@
         if (username) {
           document.getElementById('usernameDisplay').textContent = `Chào, ${username}`;
       } else {
-          window.location.href = '/public/login.html'; // Chuyển hướng về trang đăng nhập nếu không có username
+          window.location.href = './login.html'; // Chuyển hướng về trang đăng nhập nếu không có username
       }
 
       document.getElementById('logout').addEventListener('click', function() {
@@ -348,5 +321,6 @@
     <script src="./js/logout.js"></script>
     <script src="./js/post.js"></script>
     <script src="./js/login.js"></script>
+    <script src="./js/imageput.js"></script>
   </body>
 </html>

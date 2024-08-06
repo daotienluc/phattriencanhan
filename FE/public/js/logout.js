@@ -7,7 +7,7 @@ document.getElementById("logout").addEventListener("click", async () => {
 
     if (response.ok) {
       alert("Logout successful");
-      window.location.href = "./index.html"; // Chuyển hướng tới trang đăng nhập
+      window.location.href = "./index.html";
     } else {
       alert("Logout failed");
     }

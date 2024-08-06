@@ -7,6 +7,8 @@ const bcrypt = require("bcryptjs");
 const cookieParser = require("cookie-parser");
 require("dotenv").config({ path: "Data.env" });
 
+const multer = require("multer"); // Import multer
+
 const app = express();
 const port = process.env.PORT || 3004;
 
@@ -33,6 +35,25 @@ app.use(
   })
 );
 
+// Configure multer for image upload
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, "uploads")); // Define the upload directory
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(
+      null,
+      file.fieldname + "-" + uniqueSuffix + path.extname(file.originalname)
+    );
+  },
+});
+
+const upload = multer({ storage: storage });
+
+// Serve static files from the "uploads" directory
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
 // Đường dẫn tuyệt đối đến thư mục public
 const publicDir = path.join(__dirname, "..", "FE", "public");
 // Serve static HTML files
@@ -45,6 +66,10 @@ app.get("/", (req, res) => {
 // Định tuyến cho các tệp HTML
 app.get("/index.html", (req, res) => {
   res.sendFile(path.join(publicDir, "index.html"));
+});
+
+app.get("/information.html", (req, res) => {
+  res.sendFile(path.join(publicDir, "information.html"));
 });
 
 app.get("/register.html", (req, res) => {
@@ -61,9 +86,9 @@ app.get("/logged.html", (req, res) => {
 
 // Register a new user
 app.post("/api/register", async (req, res) => {
-  const { username, email, password } = req.body;
+  const { name, username, email, password } = req.body;
 
-  if (!username || !email || !password) {
+  if (!name || !username || !email || !password) {
     return res.status(400).json({ message: "Vui lòng điền đầy đủ thông tin" });
   }
 
@@ -80,10 +105,10 @@ app.post("/api/register", async (req, res) => {
     try {
       const hashedPassword = await bcrypt.hash(password, 10);
       const insertUserQuery =
-        "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+        "INSERT INTO users (name, username, email, password) VALUES ( ?, ?, ?, ?)";
       db.query(
         insertUserQuery,
-        [username, email, hashedPassword],
+        [name, username, email, hashedPassword],
         (err, results) => {
           if (err) {
             console.error("Error when inserting into database:", err);
@@ -124,7 +149,11 @@ app.post("/api/login", (req, res) => {
       return res.status(401).send("Sai mật khẩu");
     }
     res.cookie("authToken", "exampleAuthToken", { httpOnly: true });
-    res.status(200).send("Đăng nhập thành công");
+    res.status(200).json({
+      username: user.username,
+      name: user.name,
+      profileImage: user.profileImage,
+    });
   });
 });
 
@@ -229,9 +258,10 @@ app.get("/api/posts", (req, res) => {
   const offset = (page - 1) * limit;
 
   const sql = `
-        SELECT p.id, p.postTitle, p.postContent, p.username, p.likeCount,
+        SELECT p.id, p.postTitle, p.postContent, p.username, p.likeCount , u.profileImage,
                IFNULL(c.commentCount, 0) AS commentCount
         FROM posts p
+        LEFT JOIN users u ON p.username = u.username
         LEFT JOIN (
             SELECT postId, COUNT(*) AS commentCount
             FROM comments
@@ -306,6 +336,34 @@ app.get("/api/posts/:id/like-status", (req, res) => {
 
     const liked = results.length > 0;
     res.json({ liked });
+  });
+});
+
+// Upload profile image
+app.post("/api/upload", upload.single("profileImage"), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ message: "Không có tệp nào được chọn" });
+  }
+
+  const filePath = `/uploads/${path.basename(req.file.path)}`;
+  const username = req.body.username; // Hoặc lấy từ cookie hoặc token nếu có
+
+  if (!username) {
+    return res.status(400).json({ message: "Không có thông tin người dùng" });
+  }
+
+  // Cập nhật đường dẫn ảnh vào bảng users
+  const updateImageQuery =
+    "UPDATE users SET profileImage = ? WHERE username = ?";
+  db.query(updateImageQuery, [filePath, username], (err, result) => {
+    if (err) {
+      console.error("Error updating profile image path:", err);
+      return res
+        .status(500)
+        .json({ message: "Đã xảy ra lỗi khi cập nhật ảnh hồ sơ" });
+    }
+
+    res.status(200).json({ message: "Tải lên thành công", filePath });
   });
 });
 

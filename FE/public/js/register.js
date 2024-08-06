@@ -4,6 +4,7 @@ document
     event.preventDefault();
 
     const username = document.getElementById("username").value;
+    const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
@@ -13,7 +14,7 @@ document
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, email, password }),
+        body: JSON.stringify({ name, username, email, password }),
         mode: "cors",
       });
 

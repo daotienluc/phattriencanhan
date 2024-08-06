@@ -17,6 +17,7 @@ document
       });
 
       if (response.ok) {
+        const data = await response.json();
         Swal.fire({
           icon: "success",
           title: "Đăng Nhập Thành Công",
@@ -24,6 +25,8 @@ document
           timer: 1500,
         });
         localStorage.setItem("username", username); // Lưu username
+        localStorage.setItem("profileImage", data.profileImage); // Lưu username
+        localStorage.setItem("name", data.name); // Lưu username
         setTimeout(() => {
           window.location.href = "./logged.html"; // Đổi đường dẫn
         }, 1000);

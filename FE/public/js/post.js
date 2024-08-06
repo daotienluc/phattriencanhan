@@ -67,6 +67,9 @@ async function fetchPosts(page) {
 
     const username = localStorage.getItem("username");
 
+    // const profileImage = post.profileImage || './img/user.jpg';
+    // const profileImage = localStorage.setItem('profileImage') || './img/user.jpg';
+
     for (const post of data) {
       const postDiv = document.createElement("div");
       postDiv.classList.add("post");
@@ -75,7 +78,9 @@ async function fetchPosts(page) {
                 <div class="blog shadow" data-id="${post.id}">
                     <div class="blog_user">
                         <div class="avata_user">
-                            <img src="./img/user.jpg" alt="" />
+                            <img id="preview-img" src="${
+                              post.profileImage || "./img/user.jpg"
+                            }" alt="profileImage" /> 
                         </div>
                         <p>${post.username}</p>
                     </div>
@@ -110,7 +115,7 @@ async function fetchPosts(page) {
                     </div>
                     <div class="blog_comment d-flex" style="display: none;">
                         <div class="comment_user">
-                            <img src="./img/user.jpg" alt="" />
+                           <img id="preview-img" src="./img/user.jpg" alt="profileImage" />
                         </div>
                         <input class="user-comment-btn" type="text" placeholder="Bình luận với vai trò user" />
                         <button class="submit-comment-btn">Gửi</button>
@@ -299,7 +304,7 @@ async function fetchComments(postId, commentsContainer, commentCountSpan) {
                 <div class="blog shadow">
                     <div class="blog_user">
                         <div class="avata_user">
-                            <img src="./img/user.jpg" alt="" />
+                           <img id="preview-img" src="./img/user.jpg" alt="profileImage" />
                         </div>
                         <p>${comment.username}</p>
                     </div>

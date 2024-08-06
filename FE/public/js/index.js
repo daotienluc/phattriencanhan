@@ -6,14 +6,31 @@ document.getElementById("btnSignUp").onclick = function () {
   window.location.href = "./register.html";
 };
 
+document.getElementById("btnXemTaiLieu1").onclick = function () {
+  window.location.href = "./FeaturedPage/page1.html";
+};
+
+document.getElementById("btnXemTaiLieu2").onclick = function () {
+  window.location.href = "./FeaturedPage/page2.html";
+};
+
+document.getElementById("btnXemTaiLieu3").onclick = function () {
+  window.location.href = "./FeaturedPage/page3.html";
+};
+
+document.getElementById("btnXemTaiLieu4").onclick = function () {
+  window.location.href = "./FeaturedPage/page4.html";
+};
 
 // Login on to --> logged
 function register() {
-  window.location.href = './register.html';
+  window.location.href = "./register.html";
 }
 
-
-
+document.getElementById("btnTimHieuThem").onclick = function () {
+  alert("Vui lòng đăng nhập để khám phá nhé !");
+  window.location.href = "./login.html";
+};
 
 // toan10, lí 10, hóa 10
 document.getElementById("toan10").onclick = function () {

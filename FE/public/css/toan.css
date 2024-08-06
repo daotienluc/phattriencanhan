@@ -81,6 +81,12 @@
   color: #000;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
 .header_top {
   background-color: #d9d9d9;
   padding: 10px 0;
@@ -127,6 +133,7 @@
 /* main */
 
 #main {
+  padding-top: 75px;
   background-color: #f1f5f9;
 }
 
@@ -135,7 +142,7 @@
 }
 
 .content {
-  width: 89%;
+  width: 100%;
   padding-left: 20px;
 }
 
