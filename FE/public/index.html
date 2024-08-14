@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Kho tài liệu B&D</title>
+    <title>Kho tài liệu B&D</title> <link rel="shortcut icon" href="./img/file.png" type="image/x-icon"> <link rel="shortcut icon" href="./img/file.png" type="image/x-icon">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap CSS v5.2.1 -->
@@ -39,71 +39,77 @@
     />
 
     <link rel="stylesheet" href="./css/index.css" />
+
+        <!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"/>
   </head>
   <body>
     <header>
       <div class="header_nav">
         <div class="container">
-          <ul class="nav nav-tabs align-items-center justify-content-lg-around">
+          <ul class="nav nav-tabs align-items-center">
             <li class="nav-item mx-3">
               <a class="nav-link fw-bold fs-1" id="logo" href="#">B&D</a>
             </li>
-            <li class="nav-item mx-3 dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-expanded="false"
-                >Lớp 10</a
-              >
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" id="toan10" href="#">Toán</a></li>
-                <li><a class="dropdown-item" id="vatli10" href="#">Vật lí</a></li>
-                <li>
-                  <a class="dropdown-item" id="hoahoc10" href="#">Hóa học</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item mx-3 dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-expanded="false"
-                >Lớp 11</a
-              >
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" id="toan11" href="#">Toán</a></li>
-                <li><a class="dropdown-item" id="vatli11" href="#">Vật lí</a></li>
-                <li>
-                  <a class="dropdown-item" id="hoahoc11" href="#">Hóa học</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item mx-3 dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-expanded="false"
-                >Lớp 12</a
-              >
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" id="toan12" href="#">Toán</a></li>
-                <li><a class="dropdown-item" id="vatli12" href="#">Vật lí</a></li>
-                <li>
-                  <a class="dropdown-item" id="hoahoc12" href="#">Hóa học</a>
-                </li>
-              </ul>
-            </li>
-            <div class="header_btn ">
-              <button class="btn btn_login" id="btnLogin">Đăng nhập</button>
-              <button class="btn btn_signup" id="btnSignUp">Đăng kí</button>
+            <div class="nav-items">
+              <li class="nav-item mx-3 dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  >Lớp 10</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" id="toan10" href="#">Toán</a></li>
+                  <li><a class="dropdown-item" id="vatli10" href="#">Vật lí</a></li>
+                  <li>
+                    <a class="dropdown-item" id="hoahoc10" href="#">Hóa học</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item mx-3 dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  >Lớp 11</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" id="toan11" href="#">Toán</a></li>
+                  <li><a class="dropdown-item" id="vatli11" href="#">Vật lí</a></li>
+                  <li>
+                    <a class="dropdown-item" id="hoahoc11" href="#">Hóa học</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item mx-3 dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  >Lớp 12</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" id="toan12" href="#">Toán</a></li>
+                  <li><a class="dropdown-item" id="vatli12" href="#">Vật lí</a></li>
+                  <li>
+                    <a class="dropdown-item" id="hoahoc12" href="#">Hóa học</a>
+                  </li>
+                </ul>
+              </li>
+              <div class="header_btn ">
+                <button class="btn btn_login" id="btnLogin">Đăng nhập</button>
+                <button class="btn btn_signup" id="btnSignUp">Đăng kí</button>
+              </div>
             </div>
-                
+             <!-- Nút menu được thêm vào đây -->
+             <div class="menu-button">&#9776;</div>
               </div>
             </div>
           </ul>
@@ -130,8 +136,8 @@
         <section id="about">
           <h2>Về Chúng Tôi</h2>
           <p>Chào mừng bạn đến với BookAndDocument - nền tảng học tập trực tuyến hàng đầu dành cho học sinh lớp 10, 11, và 12. Chúng tôi cung cấp các bài tập chất lượng cao và phong phú về Toán, Vật Lí và Hóa Học, giúp bạn nâng cao kiến thức và kỹ năng học tập của mình.</p>
-          <p>Tại BookAndDocument, chúng tôi hiểu rằng mỗi học sinh đều có nhu cầu học tập riêng biệt. Vì vậy, chúng tôi thiết kế các bài tập theo từng cấp độ khó, từ cơ bản đến nâng cao, đảm bảo phù hợp với mọi trình độ của học sinh. Ngoài ra, chúng tôi còn cung cấp các tài liệu giải thích chi tiết và video hướng dẫn để hỗ trợ bạn trong quá trình học tập.</p>
-          <p>Với đội ngũ giáo viên và chuyên gia giàu kinh nghiệm, chúng tôi cam kết mang đến cho bạn những tài nguyên học tập tốt nhất. Hãy bắt đầu hành trình học tập của bạn với BookAndDocument và đạt được thành công trong kỳ thi!</p>
+          <p>Tại BookAndDocument, chúng tôi hiểu rằng mỗi học sinh đều có nhu cầu học tập riêng biệt. Ngoài ra, chúng tôi còn cung cấp các tài liệu giải thích chi tiết để hỗ trợ bạn trong quá trình học tập.</p>
+          <p>Chúng tôi cam kết mang đến cho bạn những tài nguyên học tập tốt nhất. Hãy bắt đầu hành trình học tập của bạn với BookAndDocument và đạt được thành công trong kỳ thi!</p>
         </section>
 
         <!------------------------- Component  ------------------------------------------------------>
@@ -139,72 +145,73 @@
           <h3 class="fw-bold">Tài liệu, đề thi online nổi bật của BookAndDocument</h3>
           <p>Dành cho các học sinh từ lớp 10 -12</p>
           <div class="row">
-            <div class="col-3 ">
-             <div class="document_img">
-              <img src="./img/document.png" class="rounded-top-3" alt="">
-             </div>
-             <div class="document_body rounded-bottom-3">
-              <h6>Tài liệu môn toán kì thi THPT Quốc Gia từ 2020-2024</h6>
-              <div class="document_body-icon">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                  <div class="document_img">
+                      <img src="./img/document.png" class="rounded-top-3 img-fluid" alt="">
+                  </div>
+                  <div class="document_body rounded-bottom-3">
+                      <h6>Tài liệu môn toán kì thi THPT Quốc Gia từ 2020-2024</h6>
+                      <div class="document_body-icon">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                      </div>
+                      <button class="btn btn-success my-3" id="btnXemTaiLieu1">Xem tài liệu</button>
+                  </div>
               </div>
-              <button class="btn btn-success my-3" id="btnXemTaiLieu1">Xem tài liệu</button>
-             </div> 
-            </div>
-            <div class="col-3 ">
-              <div class="document_img">
-               <img src="./img/thpt.jpg" class="rounded-top-3" alt="">
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                  <div class="document_img">
+                      <img src="./img/thpt.jpg" class="rounded-top-3 img-fluid" alt="">
+                  </div>
+                  <div class="document_body rounded-bottom-3">
+                      <h6>Đề thi bản file PDF THPT Quốc Gia các trường môn Toán Lý Hóa </h6>
+                      <div class="document_body-icon">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                      </div>
+                      <button class="btn btn-success my-3" id="btnXemTaiLieu2">Xem tài liệu</button>
+                  </div>
               </div>
-              <div class="document_body rounded-bottom-3">
-               <h6>Đề thi bản file PDF THPT Quốc Gia các trường môn Toán Lý Hóa </h6>
-               <div class="document_body-icon">
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-               </div>
-               <button class="btn btn-success my-3" id="btnXemTaiLieu2">Xem tài liệu</button>
-              </div> 
-             </div>
-             <div class="col-3 ">
-              <div class="document_img">
-               <img src="./img/vatli.png" class="rounded-top-3" alt="">
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                  <div class="document_img">
+                      <img src="./img/vatli.png" class="rounded-top-3 img-fluid" alt="">
+                  </div>
+                  <div class="document_body rounded-bottom-3">
+                      <h6>Đề cương ôn tập môn vật lý các kì thi cuối kì lớp 11</h6>
+                      <div class="document_body-icon">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                      </div>
+                      <button class="btn btn-success my-3" id="btnXemTaiLieu3">Xem tài liệu</button>
+                  </div>
               </div>
-              <div class="document_body rounded-bottom-3">
-               <h6>Đề cương ôn tập môn vật lý các kì thi cuối kì lớp 11</h6>
-               <div class="document_body-icon">
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-               </div>
-               <button class="btn btn-success my-3" id="btnXemTaiLieu3">Xem tài liệu</button>
-              </div> 
-             </div>
-             <div class="col-3 ">
-              <div class="document_img">
-               <img src="./img/documenthoa.png" class="rounded-top-3" alt="">
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                  <div class="document_img">
+                      <img src="./img/documenthoa.png" class="rounded-top-3 img-fluid" alt="">
+                  </div>
+                  <div class="document_body rounded-bottom-3">
+                      <h6>Tài liệu cho các bạn ôn thi tốt nghiệp THPT Quốc Gia môn hóa học</h6>
+                      <div class="document_body-icon">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                      </div>
+                      <button class="btn btn-success my-3" id="btnXemTaiLieu4">Xem tài liệu</button>
+                  </div>
               </div>
-              <div class="document_body rounded-bottom-3">
-               <h6>Tài liệu cho các bạn ôn thi tốt nghiệp THPT Quốc Gia môn hóa học</h6>
-               <div class="document_body-icon">
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-               </div>
-               <button class="btn btn-success my-3" id="btnXemTaiLieu4">Xem tài liệu</button>
-              </div> 
-             </div>
           </div>
-        </section>
+      </section>
+      
 
         <section id="about">
           <h2 style="color: #DB3030;">
@@ -219,76 +226,77 @@
           <button class="btn btn-success" id="btnTimHieuThem">TÌM HIỂU THÊM</button>
           </section>
 
-        <section class="document mt-5">
-          <h3 class="fw-bold">Tài liệu, đề thi dự kiến (Cấp THCS)</h3>
-          <p>Dành cho các học sinh từ lớp 6 - lớp 9</p>
-          <div class="row">
-            <div class="col-3 ">
-             <div class="document_img">
-              <img src="./img/document.png" class="rounded-top-3" alt="">
-             </div>
-             <div class="document_body rounded-bottom-3">
-              <h6>Tài liệu môn toán kì thi THPT Quốc Gia từ 2020-2024</h6>
-              <div class="document_body-icon">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <button class="btn btn-secondary my-3">Dự kiến phát hành tháng 9/2024</button>
-             </div> 
+          <section class="document mt-5">
+            <h3 class="fw-bold">Tài liệu, đề thi dự kiến (Cấp THCS)</h3>
+            <p>Dành cho các học sinh từ lớp 6 - lớp 9</p>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                    <div class="document_img">
+                        <img src="./img/dukien1.png" class="rounded-top-3 img-fluid" style="object-fit: cover;" alt="">
+                    </div>
+                    <div class="document_body rounded-bottom-3">
+                        <h6>Tài liệu môn toán lớp 8 từ 2020-2024</h6>
+                        <div class="document_body-icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <button class="btn btn-secondary my-3">Dự kiến phát hành tháng 9/2024</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                    <div class="document_img">
+                        <img src="./img/dukien2.png" class="rounded-top-3 img-fluid" style="object-fit: cover;" alt="">
+                    </div>
+                    <div class="document_body rounded-bottom-3">
+                        <h6>Đề thi bản file PDF các trường môn Toán lớp 7</h6>
+                        <div class="document_body-icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <button class="btn btn-secondary my-3">Dự kiến phát hành tháng 9/2024</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                    <div class="document_img">
+                        <img src="./img/dukien3.png" class="rounded-top-3 img-fluid" style="object-fit: cover;" alt="">
+                    </div>
+                    <div class="document_body rounded-bottom-3">
+                        <h6>Đề cương ôn tập môn vật lý các kì thi cuối kì lớp 6</h6>
+                        <div class="document_body-icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <button class="btn btn-secondary my-3">Dự kiến phát hành tháng 9/2024</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                    <div class="document_img">
+                        <img src="./img/dukien4.png" class="rounded-top-3 img-fluid" style="object-fit: cover;" alt="">
+                    </div>
+                    <div class="document_body rounded-bottom-3">
+                        <h6>Tài liệu cho các bạn ôn thi tốt nghiệp THPT Quốc Gia</h6>
+                        <div class="document_body-icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <button class="btn btn-secondary my-3">Dự kiến phát hành tháng 9/2024</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-3 ">
-              <div class="document_img">
-               <img src="./img/thpt.jpg" class="rounded-top-3" alt="">
-              </div>
-              <div class="document_body rounded-bottom-3">
-               <h6>Đề thi bản file PDF THPT Quốc Gia các trường môn Toán Lý Hóa </h6>
-               <div class="document_body-icon">
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-               </div>
-               <button class="btn btn-secondary my-3">Dự kiến phát hành tháng 9/2024</button>
-              </div> 
-             </div>
-             <div class="col-3 ">
-              <div class="document_img">
-               <img src="./img/vatli.png" class="rounded-top-3" alt="">
-              </div>
-              <div class="document_body rounded-bottom-3">
-               <h6>Đề cương ôn tập môn vật lý các kì thi cuối kì lớp 11</h6>
-               <div class="document_body-icon">
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-               </div>
-               <button class="btn btn-secondary my-3">Dự kiến phát hành tháng 9/2024</button>
-              </div> 
-             </div>
-             <div class="col-3 ">
-              <div class="document_img">
-               <img src="./img/documenthoa.png" class="rounded-top-3" alt="">
-              </div>
-              <div class="document_body rounded-bottom-3">
-               <h6>Tài liệu cho các bạn ôn thi tốt nghiệp THPT Quốc Gia môn hóa học</h6>
-               <div class="document_body-icon">
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-               </div>
-               <button class="btn btn-secondary my-3">Dự kiến phát hành tháng 9/2024</button>
-              </div> 
-             </div>
-          </div>
         </section>
+        
 
         <section class="slogan pt-5">
           <h2>BOOKANDDOCUMENT.IO.VN</h2>
@@ -371,6 +379,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+<!-- SweetAlert2 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script type="text/javascript">
       $(document).ready(function () {
         $(".banner_carousel").slick({
@@ -381,6 +393,31 @@
         });
       });
     </script>
+
+    <!-- JavaScript để xử lý sự kiện khi bấm vào nút menu: -->
+    <script>
+      document.querySelector('.menu-button').addEventListener('click', function() {
+      document.querySelector('.nav-items').classList.toggle('active');
+    });
+
+    </script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+     const username = localStorage.getItem('username');
+   if (username) {
+     window.location.href = './logged.html'; // Chuyển hướng về trang đăng nhập nếu không có username
+ }
+
+ document.getElementById('logout').addEventListener('click', function() {
+     localStorage.removeItem('username'); // Xóa username khi đăng xuất
+     localStorage.removeItem('name');
+     localStorage.removeItem('profileImage');
+     localStorage.removeItem('email');
+   });
+
+ });
+</script>
 
     
 

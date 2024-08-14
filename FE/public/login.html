@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Login</title>
+    <link rel="shortcut icon" href="./img/file.png" type="image/x-icon" />
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -109,6 +110,24 @@
 
     <!-- SweetAlert2 JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const username = localStorage.getItem("username");
+        if (username) {
+          window.location.href = "./logged.html"; // Chuyển hướng về trang đăng nhập nếu không có username
+        }
+
+        document
+          .getElementById("logout")
+          .addEventListener("click", function () {
+            localStorage.removeItem("username"); // Xóa username khi đăng xuất
+            localStorage.removeItem("name");
+            localStorage.removeItem("profileImage");
+            localStorage.removeItem("email");
+          });
+      });
+    </script>
 
     <div id="message" class="hidden"></div>
     <script src="./js/index.js"></script>

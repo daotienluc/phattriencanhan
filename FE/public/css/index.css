@@ -66,6 +66,19 @@ header {
   background-color: #0084ff;
 }
 
+.container .nav {
+  justify-content: space-between;
+}
+
+.nav-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-button {
+  display: none;
+}
+
 .header_nav {
   background-color: var(--prymary-color);
 }
@@ -230,66 +243,308 @@ header {
 
 /* reposive */
 
-/* mobile */
+/* Mobile Small (320px and below) */
+@media only screen and (max-width: 320px) {
+  /* CSS cho màn hình nhỏ hơn hoặc bằng 320px */
 
-@media only screen and (max-width: 767px) {
-  .text {
+  #main {
+    padding-top: 54px;
+  }
+
+  .slick-dots {
+    display: none !important;
+  }
+
+  .slick-list {
+    height: 19vh;
+  }
+
+  .banner_carousel {
+    width: 100%;
+    height: 19vh;
+  }
+
+  .container .nav {
+    justify-content: space-between !important;
+  }
+
+  /* Ẩn các mục nav */
+  .nav-items {
     display: none;
   }
 
-  .slidebar_list {
-    text-align: center;
+  /* Thêm nút menu */
+  .header_nav .menu-button {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 9px;
+    font-size: 24px;
+    cursor: pointer;
   }
 
-  .slidebar_btn {
-    margin-right: 12px;
+  .nav-items {
+    justify-content: center;
   }
 
-  .slidebar_title {
-    text-align: center;
-  }
-
-  .slidebar {
-    width: 15%;
-  }
-
-  .carousel {
-    width: 80%;
-  }
-
-  .main_content {
-    flex-wrap: wrap;
-  }
-}
-
-/* tablet */
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .text {
-    display: none;
-  }
-
-  .slidebar_title {
-    text-align: center;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .text {
-    font-size: 10px;
-  }
-
-  .slidebar_btn {
+  /* Hiển thị các mục nav khi bấm vào nút menu */
+  .nav-items.active {
+    position: absolute;
     display: flex;
-    align-items: center;
-  }
-
-  .slidebar_btn i {
-    margin-right: 5px;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
 }
 
-@media only screen and (min-width: 1200px) {
+/* Mobile Medium (321px - 375px) */
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+  /* CSS cho màn hình từ 321px đến 375px */
+
+  #main {
+    padding-top: 56px;
+  }
+
+  .slick-dots {
+    display: none !important;
+  }
+
+  .slick-list {
+    height: 19vh;
+  }
+
+  .banner_carousel {
+    width: 100%;
+    height: 19vh;
+  }
+
+  .container .nav {
+    justify-content: space-between !important;
+  }
+
+  /* Ẩn các mục nav */
+  .nav-items {
+    display: none;
+  }
+
+  /* Thêm nút menu */
+  .header_nav .menu-button {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 9px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .nav-items {
+    justify-content: center;
+  }
+
+  /* Hiển thị các mục nav khi bấm vào nút menu */
+  .nav-items.active {
+    position: absolute;
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Mobile Large (376px - 414px) */
+@media only screen and (min-width: 376px) and (max-width: 414px) {
+  /* CSS cho màn hình từ 376px đến 414px */
+
+  #main {
+    padding-top: 56px;
+  }
+
+  .slick-dots {
+    display: none !important;
+  }
+
+  .slick-list {
+    height: 25vh;
+  }
+
+  .banner_carousel {
+    width: 100%;
+    height: 25vh;
+  }
+
+  .container .nav {
+    justify-content: space-between !important;
+  }
+
+  /* Ẩn các mục nav */
+  .nav-items {
+    display: none;
+  }
+
+  /* Thêm nút menu */
+  .header_nav .menu-button {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 9px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .nav-items {
+    justify-content: center;
+  }
+
+  /* Hiển thị các mục nav khi bấm vào nút menu */
+  .nav-items.active {
+    position: absolute;
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Tablet Portrait (768px) */
+@media only screen and (min-width: 415px) and (max-width: 768px) {
+  /* CSS cho màn hình từ 415px đến 768px */
+
+  #main {
+    padding-top: 64px;
+  }
+
+  .slick-dots {
+    display: none !important;
+  }
+
+  .slick-list {
+    height: 30vh;
+  }
+
+  .banner_carousel {
+    width: 100%;
+    height: 30vh;
+  }
+
+  .container .nav {
+    justify-content: space-between !important;
+  }
+
+  /* Ẩn các mục nav */
+  .nav-items {
+    display: none;
+  }
+
+  /* Thêm nút menu */
+  .header_nav .menu-button {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 9px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .nav-items {
+    justify-content: center;
+  }
+
+  /* Hiển thị các mục nav khi bấm vào nút menu */
+  .nav-items.active {
+    position: absolute;
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Tablet Landscape (1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  /* CSS cho màn hình từ 769px đến 1024px */
+
+  #main {
+    padding-top: 71px;
+  }
+
+  .slick-dots {
+    display: none !important;
+  }
+
+  .slick-list {
+    height: 52vh;
+  }
+
+  .banner_carousel {
+    width: 100%;
+    height: 52vh;
+  }
+
+  /* Ẩn các mục nav */
+  .nav-items {
+    display: none;
+  }
+
+  /* Thêm nút menu */
+  .header_nav .menu-button {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .nav-items {
+    justify-content: center;
+  }
+
+  /* Hiển thị các mục nav khi bấm vào nút menu */
+  .nav-items.active {
+    position: absolute;
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Small Desktop (1280px) */
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  /* CSS cho màn hình từ 1025px đến 1280px */
+  .slick-dots {
+    display: none !important;
+  }
+}
+
+/* Medium Desktop (1440px) */
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {
+  /* CSS cho màn hình từ 1281px đến 1440px */
+}
+
+/* Large Desktop (1920px) */
+@media only screen and (min-width: 1441px) and (max-width: 1920px) {
+  /* CSS cho màn hình từ 1441px đến 1920px */
+}
+
+/* Extra Large Desktop (1921px and above) */
+@media only screen and (min-width: 1921px) {
+  /* CSS cho màn hình lớn hơn 1921px */
 }
 
 @keyframes modalfadein {

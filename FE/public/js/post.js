@@ -304,7 +304,9 @@ async function fetchComments(postId, commentsContainer, commentCountSpan) {
                 <div class="blog shadow">
                     <div class="blog_user">
                         <div class="avata_user">
-                           <img id="preview-img" src="./img/user.jpg" alt="profileImage" />
+                           <img id="preview-img" src="${
+                             comment.profileImage || "./img/user.jpg"
+                           }" alt="profileImage" />
                         </div>
                         <p>${comment.username}</p>
                     </div>

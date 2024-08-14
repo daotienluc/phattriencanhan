@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const profileImage = localStorage.getItem("profileImage");
-  if (profileImage) {
-    document.getElementById("preview-img").src = profileImage;
+  const previewImg = document.getElementById("preview-img");
+
+  // Hiển thị ảnh đại diện từ localStorage hoặc ảnh mặc định
+  if (profileImage && profileImage !== "null" && profileImage !== "") {
+    previewImg.src = profileImage;
+  } else {
+    previewImg.src = "/img/user.jpg"; // Ảnh mặc định nếu không có ảnh trong localStorage hoặc giá trị là "null" hoặc chuỗi trống
   }
 
   const username = localStorage.getItem("username");
@@ -25,6 +30,7 @@ document
         const response = await fetch("http://localhost:3004/api/upload", {
           method: "POST",
           body: formData,
+          mode: "cors",
         });
 
         if (response.ok) {
@@ -32,7 +38,6 @@ document
           Swal.fire({
             icon: "success",
             title: "Ảnh đã được tải lên",
-            text: `Đường dẫn ảnh: ${data.filePath}`,
             showConfirmButton: false,
             timer: 1500,
           });

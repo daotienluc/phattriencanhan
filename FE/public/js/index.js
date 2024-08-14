@@ -28,8 +28,16 @@ function register() {
 }
 
 document.getElementById("btnTimHieuThem").onclick = function () {
-  alert("Vui lòng đăng nhập để khám phá nhé !");
-  window.location.href = "./login.html";
+  Swal.fire({
+    icon: "success",
+    title: "Vui lòng đăng nhập để khám phá nhé !",
+    showConfirmButton: true,
+    // timer: 1500,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      window.location.href = "./login.html";
+    }
+  });
 };
 
 // toan10, lí 10, hóa 10

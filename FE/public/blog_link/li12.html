@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Kho tài liệu B&D</title>
+    <title>Kho tài liệu B&D</title> <link rel="shortcut icon" href="./../img/file.png" type="image/x-icon">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap CSS v5.2.1 -->
@@ -50,67 +50,69 @@
     <header>
       <div class="header_nav">
         <div class="container">
-          <ul class="nav nav-tabs align-items-center justify-content-lg-around">
+          <ul class="nav nav-tabs align-items-center">
             <li class="nav-item mx-3">
               <a class="nav-link fw-bold fs-1" id="logo" href="#">B&D</a>
             </li>
-            <li class="nav-item mx-3 dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-expanded="false"
-                >Lớp 10</a
-              >
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" id="toan10" href="#">Toán</a></li>
-                <li><a class="dropdown-item" id="vatli10" href="#">Vật lí</a></li>
-                <li>
-                  <a class="dropdown-item" id="hoahoc10" href="#">Hóa học</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item mx-3 dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-expanded="false"
-                >Lớp 11</a
-              >
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" id="toan11" href="#">Toán</a></li>
-                <li><a class="dropdown-item" id="vatli11" href="#">Vật lí</a></li>
-                <li>
-                  <a class="dropdown-item" id="hoahoc11" href="#">Hóa học</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item mx-3 dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-expanded="false"
-                >Lớp 12</a
-              >
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" id="toan12" href="#">Toán</a></li>
-                <li><a class="dropdown-item" id="vatli12" href="#">Vật lí</a></li>
-                <li>
-                  <a class="dropdown-item" id="hoahoc12" href="#">Hóa học</a>
-                </li>
-              </ul>
-            </li>
-            
-            <div class="header_btn ">
-              <button class="btn btn_login" id="btnLogin">Đăng nhập</button>
-              <button class="btn btn_signup" id="btnSignUp">Đăng kí</button>
+            <div class="nav-items">
+              <li class="nav-item mx-3 dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  >Lớp 10</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" id="toan10" href="#">Toán</a></li>
+                  <li><a class="dropdown-item" id="vatli10" href="#">Vật lí</a></li>
+                  <li>
+                    <a class="dropdown-item" id="hoahoc10" href="#">Hóa học</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item mx-3 dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  >Lớp 11</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" id="toan11" href="#">Toán</a></li>
+                  <li><a class="dropdown-item" id="vatli11" href="#">Vật lí</a></li>
+                  <li>
+                    <a class="dropdown-item" id="hoahoc11" href="#">Hóa học</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item mx-3 dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  >Lớp 12</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" id="toan12" href="#">Toán</a></li>
+                  <li><a class="dropdown-item" id="vatli12" href="#">Vật lí</a></li>
+                  <li>
+                    <a class="dropdown-item" id="hoahoc12" href="#">Hóa học</a>
+                  </li>
+                </ul>
+              </li>
+              <div class="header_btn ">
+                <button class="btn btn_login" id="btnLogin">Đăng nhập</button>
+                <button class="btn btn_signup" id="btnSignUp">Đăng kí</button>
+              </div>
             </div>
-                
+             <!-- Nút menu được thêm vào đây -->
+             <div class="menu-button">&#9776;</div>
               </div>
             </div>
           </ul>
@@ -123,7 +125,7 @@
           <div class="content">
               <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
                 <div class="content_left w-50 p-2">
-                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100 object-fit-cover">
                 </div>
                 <div class="content_right p-2">
                     <a class="fs-2 text-black fw-bold text-decoration-none" >Bài thi: KHOA HỌC TỰ NHIÊN MÔN VẬT LÍ - Mã đề thi 221</a>
@@ -135,7 +137,7 @@
               </div>
               <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
                 <div class="content_left w-50 p-2">
-                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100 object-fit-cover">
                 </div>
                 <div class="content_right p-2">
                     <a class="fs-2 text-black fw-bold text-decoration-none" >Bài thi: KHOA HỌC TỰ NHIÊN MÔN VẬT LÍ - Mã đề thi 209</a>
@@ -148,7 +150,7 @@
 
               <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
                 <div class="content_left w-50 p-2">
-                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100 object-fit-cover">
                 </div>
                 <div class="content_right p-2">
                     <a class="fs-2 text-black fw-bold text-decoration-none" >ĐỀ THI THỬ THPT QUỐC GIA 2022</a>
@@ -161,7 +163,7 @@
 
               <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
                 <div class="content_left w-50 p-2">
-                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100 object-fit-cover">
                 </div>
                 <div class="content_right p-2">
                     <a class="fs-2 text-black fw-bold text-decoration-none" >ĐỀ THI THỬ THPT QUỐC GIA 2020 </a>
@@ -174,7 +176,7 @@
 
               <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
                 <div class="content_left w-50 p-2">
-                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100 object-fit-cover">
                 </div>
                 <div class="content_right p-2">
                     <a class="fs-2 text-black fw-bold text-decoration-none" >ĐỀ THI THỬ THPT 2020 </a>
@@ -187,7 +189,7 @@
 
               <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
                 <div class="content_left w-50 p-2">
-                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100 object-fit-cover">
                 </div>
                 <div class="content_right p-2">
                     <a class="fs-2 text-black fw-bold text-decoration-none" >ĐỀ THI THỬ THPT QUỐC GIA 2020 KHỐI12 </a>
@@ -200,7 +202,7 @@
 
               <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
                 <div class="content_left w-50 p-2">
-                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100 object-fit-cover">
                 </div>
                 <div class="content_right p-2">
                     <a class="fs-2 text-black fw-bold text-decoration-none" >ĐỀ THI THỬ THPT 2020 KHỐI 12 </a>
@@ -213,7 +215,7 @@
               
               <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
                 <div class="content_left w-50 p-2">
-                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100 object-fit-cover">
                 </div>
                 <div class="content_right p-2">
                     <a class="fs-2 text-black fw-bold text-decoration-none" >ĐỀ THI THỬ THPT 2021 KHỐI 12 </a>
@@ -226,7 +228,7 @@
 
               <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
                 <div class="content_left w-50 p-2">
-                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100 object-fit-cover">
                 </div>
                 <div class="content_right p-2">
                     <a class="fs-2 text-black fw-bold text-decoration-none" >ĐỀ THI THỬ THPT 2022 KHỐI 12 </a>
@@ -239,7 +241,7 @@
 
               <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
                 <div class="content_left w-50 p-2">
-                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100 object-fit-cover">
                 </div>
                 <div class="content_right p-2">
                     <a class="fs-2 text-black fw-bold text-decoration-none" >ĐỀ THI THỬ THPT 2023 KHỐI 12 </a>
@@ -252,7 +254,7 @@
 
               <div class=" d-flex bg-body rounded mb-5" style="height: 334px;">
                 <div class="content_left w-50 p-2">
-                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100">
+                    <img src="./../img/delop10_2020.png" alt="" class="w-100 h-100 object-fit-cover">
                 </div>
                 <div class="content_right p-2">
                     <a class="fs-2 text-black fw-bold text-decoration-none" >ĐỀ THI THỬ THPT 2024 KHỐI 12 </a>
@@ -313,6 +315,13 @@
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
       crossorigin="anonymous"
     ></script>
+<!-- JavaScript để xử lý sự kiện khi bấm vào nút menu: -->
+    <script>
+      document.querySelector('.menu-button').addEventListener('click', function() {
+      document.querySelector('.nav-items').classList.toggle('active');
+    });
+
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"

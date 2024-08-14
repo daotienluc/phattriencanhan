@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Kho tài liệu B&D</title>
+    <title>Kho tài liệu B&D</title> <link rel="shortcut icon" href="./img/file.png" type="image/x-icon">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap CSS v5.2.1 -->
@@ -300,6 +300,9 @@
 
       document.getElementById('logout').addEventListener('click', function() {
           localStorage.removeItem('username'); // Xóa username khi đăng xuất
+          localStorage.removeItem('name');
+          localStorage.removeItem('profileImage');
+          localStorage.removeItem('email');
 
         });
 

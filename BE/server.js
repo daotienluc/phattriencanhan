@@ -30,7 +30,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "http://bookanddocument.io.vn", // Hoặc địa chỉ của trang web của bạn
+    origin: `http://127.0.0.1:5500`, // Hoặc địa chỉ của trang web của bạn
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
@@ -149,11 +151,14 @@ app.post("/api/login", (req, res) => {
       return res.status(401).send("Sai mật khẩu");
     }
     res.cookie("authToken", "exampleAuthToken", { httpOnly: true });
-    res.status(200).json({
-      username: user.username,
-      name: user.name,
-      profileImage: user.profileImage,
-    });
+    res
+      .status(200)
+      .json({
+        username: user.username,
+        name: user.name,
+        profileImage: user.profileImage,
+        email: user.email,
+      });
   });
 });
 
@@ -283,7 +288,13 @@ app.get("/api/posts", (req, res) => {
 // Get all comments for a post
 app.get("/api/posts/:id/comments", (req, res) => {
   const { id } = req.params;
-  const sql = "SELECT * FROM comments WHERE postId = ?";
+  const sql = `
+        SELECT c.id, c.commentContent, c.createdAt, u.username, u.profileImage
+        FROM comments c
+        LEFT JOIN users u ON c.username = u.username
+        WHERE c.postId = ?
+    `;
+
   db.query(sql, [id], (err, result) => {
     if (err) {
       console.error("Error fetching comments:", err);
@@ -365,6 +376,41 @@ app.post("/api/upload", upload.single("profileImage"), (req, res) => {
 
     res.status(200).json({ message: "Tải lên thành công", filePath });
   });
+});
+
+// Đổi mật khẩu
+app.post("/api/change-password", async (req, res) => {
+  const { username, currentPassword, newPassword } = req.body;
+
+  if (!username || !currentPassword || !newPassword) {
+    return res.status(400).json({ message: "Vui lòng điền đầy đủ thông tin" });
+  }
+
+  try {
+    const userQuery = "SELECT * FROM users WHERE username = ?";
+    const [user] = await db.promise().query(userQuery, [username]);
+
+    if (user.length === 0) {
+      return res.status(404).json({ message: "Người dùng không tồn tại" });
+    }
+
+    const isMatch = await bcrypt.compare(currentPassword, user[0].password);
+    if (!isMatch) {
+      return res.status(401).json({ message: "Mật khẩu cũ không đúng" });
+    }
+
+    const hashedNewPassword = await bcrypt.hash(newPassword, 10);
+    const updatePasswordQuery =
+      "UPDATE users SET password = ? WHERE username = ?";
+    await db
+      .promise()
+      .query(updatePasswordQuery, [hashedNewPassword, username]);
+
+    res.status(200).json({ message: "Đổi mật khẩu thành công" });
+  } catch (err) {
+    console.error("Error when changing password:", err);
+    res.status(500).json({ message: "Đã xảy ra lỗi khi đổi mật khẩu" });
+  }
 });
 
 app.listen(port, () => {
